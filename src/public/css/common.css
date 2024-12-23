@@ -1,0 +1,27 @@
+
+.body {
+    background: linear-gradient(-30deg, #ffe2c6, #fff4ea, #ffe5ff, #ffccff ,#c1e0ff);
+    width: 100vw;
+    height: 100vh;
+
+}
+.contents{
+    background-color: white;
+    width: 40%;
+    position: relative;
+    top: 100px;
+    left: 30%;
+    border-radius: 10px;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+       
+}
+.header__logo{
+    font-size: 60px;
+    font-family: serif; 
+    color: #ffb7ff;
+    margin: 50px 0 0 0;
+}
