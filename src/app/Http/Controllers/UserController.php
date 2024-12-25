@@ -20,4 +20,17 @@ class UserController extends Controller
     {
         return view('step2');
     }
+
+    public function weightLogs()
+    {
+        return view('log');
+    }
+
+    public function goalSetting()
+    {
+        return view('goal');
+    }
+
+
+    
 }

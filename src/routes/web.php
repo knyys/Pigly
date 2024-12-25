@@ -19,3 +19,8 @@ Route::get('/register/step1',[UserController::class,'registerStep1']);
 Route::get('/login',[UserController::class,'login']);
 
 Route::get('/register/step2',[UserController::class,'registerStep2']);
+
+Route::get('/weight_logs',[UserController::class,'weightLogs']);
+
+Route::get('/wight_logs/goal_setting',[UserController::class,'goalSetting']);
+
