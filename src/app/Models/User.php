@@ -12,6 +12,21 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+
+    // WeightTarget (1対1)
+    public function weightTarget()
+    {
+        return $this->hasOne(WeightTarget::class);
+    }
+
+    //WeightLog(1対多)
+    public function weightLogs()
+    {
+        return $this->hasMany(WeightLog::class);
+    }
+
+    
     /**
      * The attributes that are mass assignable.
      *
