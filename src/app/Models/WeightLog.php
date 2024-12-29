@@ -10,6 +10,8 @@ class WeightLog extends Model
 {
     use HasFactory;
 
+    protected $table = 'weight_logs';
+
     protected $fillable = [
         'user_id',
         'date',

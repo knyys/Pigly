@@ -14,13 +14,22 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/register/step1',[UserController::class,'registerStep1']);
+Route::get('/register/step1', [UserController::class, 'registerStep1']);
+Route::post('/register/step1', [UserController::class, 'createUser'])->name('register.step1');
 
-Route::get('/login',[UserController::class,'login']);
+Route::get('/register/step2', [UserController::class, 'registerStep2'])->name('register.step2.get');
+Route::post('/register/step2', [UserController::class, 'register'])->name('register.step2.post');
+Route::post('/logout', [UserController::class, 'logout']);
 
-Route::get('/register/step2',[UserController::class,'registerStep2']);
+/*Route::get('/register/step1', [UserController::class, 'registerStep1'])->name('register.step1');
+Route::post('/register/step1', [UserController::class, 'createUser'])->name('register.step1.post');
+Route::get('/register/step2', [UserController::class, 'registerStep2'])->name('register.step2.get');
+Route::post('/register/step2', [UserController::class, 'register'])->name('register.step2.post');*/
 
 Route::get('/weight_logs',[UserController::class,'weightLogs']);
 
 Route::get('/wight_logs/goal_setting',[UserController::class,'goalSetting']);
+
+Route::get('/weight_logs/search', [UserController::class, 'search'])->name('weight_logs.search');
+
 

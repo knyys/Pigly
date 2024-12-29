@@ -14,7 +14,10 @@
         <h2 class="header__logo">PiGLy</h2>
         <div class="header__nav">
             <a class="weight-setting-button" href="/wight_logs/goal_setting">目標体重設定</a>
-            <a class="logout-button" href="/login">ログアウト</a>
+            <form action="/logout" method="post">
+            @csrf
+            <button class="logout-btn" type="submit" value="">ログアウト</button>
+            </form>
         </div>
     </header>
     <main>

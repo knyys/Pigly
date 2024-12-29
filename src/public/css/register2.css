@@ -25,11 +25,20 @@
     font-size: 18px;
 }
 
-.register-form__contet input {
+.input-form{
+    display: flex;
+}
+
+.input-form input {
     padding: 15px 10px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    font-size: 16px;
+    width: 90%;
+    margin: 5px 5px 20px 0;
+    padding: 5px 10px 5px 10px;
+    font-size: 20px;
+}
+
+.weight-pound {
+    font-size: 20px;
 }
 
 .register-form__button {
@@ -50,4 +59,8 @@
 
 .register-form__button {
     padding-bottom: 50px;
+}
+.register-form__error-message{
+    color: red;
+    font-size: 12px;
 }
