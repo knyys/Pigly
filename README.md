@@ -3,7 +3,7 @@
 ### 環境構築
 
 #### Dockerビルド
-1.	`git clone git@github.com:knyys/mogitate.git`
+1.	`git clone git@github.com:knyys/Pigly.git`
 2.	`cd mogitate` 
 3.	`docker-compose up -d --build` 
 4.	`code .` 
