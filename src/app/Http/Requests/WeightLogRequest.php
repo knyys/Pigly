@@ -24,16 +24,15 @@ class WeightLogRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required | string | max:255',
-            'email' => 'required | string | max:255 
-            | email',
-            'password' => 'required | string | max:255',
-            'target_weight' => 'required | regex:/^\d{1,3}(\.\d)?$/',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255|email',
+            'password' => 'required|string|max:255',
+            'target_weight' => 'required|regex:/^\d{1,3}(\.\d)?$/',
             'date' => 'required',
             'weight' => 'required|numeric|regex:/^\d{1,3}(\.\d)?$/',
-            'calories' => 'required | integer',
-            'exercise_time' => 'required | time',
-            'exercise_content' => 'string | max:120',
+            'calories' => 'required|integer',
+            'exercise_time' => 'required|time',
+            'exercise_content' => 'nullable|string|max:120',
         ];
     }
 
@@ -49,10 +48,7 @@ class WeightLogRequest extends FormRequest
 
             //weight_target
             'target_weight.required'  => '目標の体重を入力してください',
-            'target_weight.regex' =>  [
-                '4桁までの数字で入力してください',
-                '小数点は1桁で入力してください',
-            ],
+            'target_weight.regex' => '4桁までの数字で入力してください<br>小数点は1桁で入力してください',
             
             //weight_logs
             'date.required' => '日付を入力してください',

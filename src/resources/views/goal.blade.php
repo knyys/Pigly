@@ -1,3 +1,4 @@
+
 @extends('layouts.index')
 
 @section('css')
@@ -9,12 +10,21 @@
     <div class="setting-page">
         <h2 class="page-header">目標体重設定</h2>
         <div class="setting-form">
-            <form action="" method="">
-                <input type="text" name="goal-weight" value="">
+            <form action="{{route('goal.setting')}}" method="post">
+                @csrf
+                <input type="text" name="target_weight" value="">
                 <span class="weight-pound">kg</span>
+                <div class="register-form__validate">
+                <p class="error-message">
+                    @if ($errors->has('target_weight')) 
+                    {!! $errors->first('target_weight') !!} 
+                     @endif
+                </p>
+                </div>
+
                 <div class="form-button">
-                    <a class="return-btn" href="/weight_logs">戻る</a>
-                    <button class="update-btn" type="submit">更新</button>
+                    <a class="btn__return" href="/weight_logs">戻る</a>
+                    <button class="btn__update" type="submit">更新</button>
                 </div>
             </form>
         </div>

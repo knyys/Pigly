@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
+use App\Models\WeightLog;
 
 class WeightLogFactory extends Factory
 {
@@ -22,5 +23,14 @@ class WeightLogFactory extends Factory
             'exercise_time' => $this->faker->time('H:i:s'),
             'exercise_content' => $this->faker->sentence(),
         ];
+    }
+
+    public function forUser(User $user)
+    {
+        return $this->state(function (array $attributes) use ($user) {
+            return [
+                'user_id' => $user->id,
+            ];
+        });
     }
 }

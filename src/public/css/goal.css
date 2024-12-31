@@ -21,7 +21,7 @@
 .setting-form input {
     justify-content: center;
     width: 80%;
-    margin: 5px 5px 20px 30px;
+    margin: 5px 5px 10px 30px;
     padding: 5px 10px 5px 10px;
     font-size: 20px;
 }
@@ -30,12 +30,22 @@
     font-size: 20px;
 }
 
+.register-form__validate {
+    display: flex;
+}
+
+.error-message {
+    font-size: 14px;
+    color: red;
+    margin-left: 30px;
+}
+
 .form-button {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.return-btn {
+.btn__return {
     text-decoration: none;
     border: none;
     background-color: #dcdcdc;
@@ -47,7 +57,7 @@
     text-align: center;
 }
 
-.update-btn {
+.btn__update {
     background: linear-gradient(90deg, #c1e0ff, #ffccff);
     border-radius: 10px;
     color: white;
@@ -57,3 +67,4 @@
     font-size: 16px;
     cursor: pointer;
 }
+
