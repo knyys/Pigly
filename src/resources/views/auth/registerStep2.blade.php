@@ -18,36 +18,36 @@
         </div>
     @endif
 <div class="register-form">
-<form action="{{route('register.step2.post')}}" method="post">
-    @csrf
-<div class="register-form__contet">
-    <label>現在の体重</label>
-    <div class="input-form">
-    <input type="text" name="weight" placeholder="現在の体重を入力" value=""/>
-    <span class="weight-pound">kg</span>
+    <form action="{{route('register.step2.post')}}" method="post">
+        @csrf
+    <div class="register-form__contet">
+        <label>現在の体重</label>
+        <div class="input-form">
+            <input type="text" name="weight" placeholder="現在の体重を入力" value=""/>
+            <span class="weight-pound">kg</span>
+        </div>
+        <p class="register-form__error-message">
+            @error('weight')
+            {{ $message }}
+            @enderror
+        </p>
+        <label>目標の体重</label>
+        <div class="input-form">
+            <input type="text" name="target_weight" placeholder="目標の体重を入力" value=""/>
+            <span class="weight-pound">kg</span>
+        </div>
+        <p class="register-form__error-message">
+            @error('target_weight')
+            {{ $message }}
+            @enderror
+        </p>
     </div>
-    <p class="register-form__error-message">
-          @error('weight')
-          {{ $message }}
-          @enderror
-    </p>
 
-    <label>目標の体重</label>
-    <div class="input-form">
-    <input type="text" name="target_weight" placeholder="目標の体重を入力" value=""/>
-    <span class="weight-pound">kg</span>
+    <div class="register-form__button">
+        <button type="submit">アカウント作成</button>
     </div>
-    <p class="register-form__error-message">
-          @error('target_weight')
-          {{ $message }}
-          @enderror
-    </p>
+    </form>
 
 </div>
-<div class="register-form__button">
-    <button type="submit">アカウント作成</button>
-</div>
-</form>
 
-</div>
 @endsection

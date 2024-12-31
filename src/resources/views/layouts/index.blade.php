@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     @yield('css')
 </head>
+
 <body class="body">
     <div class="contents">
         <header class="header">
@@ -19,11 +20,10 @@
             <button class="logout-btn" type="submit" value="">ログアウト</button>
             </form>
         </div>
-    </header>
-    <main>
-        @yield('content')
-    </main>
-
+        </header>
+        <main>
+            @yield('content')
+        </main>
     </div>
 </body>
 

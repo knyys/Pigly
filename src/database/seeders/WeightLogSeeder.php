@@ -15,11 +15,8 @@ class WeightLogSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::first();
+        $user = User::factory()->create();
 
-        WeightLog::factory()->count(35)->create([
-            'user_id' => $user->id,
-        ]);
-    
+        WeightLog::factory()->count(35)->forUser($user)->create(); 
     }
 }
