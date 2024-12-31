@@ -27,6 +27,7 @@ DB_PASSWORD=laravel_pass
 6. `php artisan db:seed`  
 
 #### ER図
+![pigly](https://github.com/user-attachments/assets/a3e35934-7566-4fbb-9cf8-0460fd633503)
 
 
 #### 使用技術
