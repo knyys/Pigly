@@ -12,14 +12,14 @@
         <div class="setting-form">
             <form action="{{route('goal.setting')}}" method="post">
                 @csrf
-                <input type="text" name="target_weight" value="">
+                <input type="text" name="target_weight" value="{{ old('target_weight') }}">
                 <span class="weight-pound">kg</span>
                 <div class="register-form__validate">
-                <p class="error-message">
-                    @if ($errors->has('target_weight')) 
-                    {!! $errors->first('target_weight') !!} 
-                     @endif
-                </p>
+                    <p class="error-message">
+                        @if ($errors->has('target_weight')) 
+                        {!! $errors->first('target_weight') !!} 
+                        @endif
+                    </p>
                 </div>
 
                 <div class="form-button">

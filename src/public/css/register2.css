@@ -60,7 +60,8 @@
 .register-form__button {
     padding-bottom: 50px;
 }
+
 .register-form__error-message{
     color: red;
-    font-size: 12px;
+    font-size: 16px;
 }
