@@ -13,7 +13,7 @@
 
 @section('content')
 <div class="register-form">
-    <form action="{{ route('register.step1') }}" method="post">
+    <form action="{{ route('register.step1') }}" method="post" novalidate>
     @csrf
     <div class="register-form__contet">
         <label>お名前</label>

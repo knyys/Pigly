@@ -17,13 +17,14 @@
             {{ $success }}
         </div>
     @endif
+
 <div class="register-form">
     <form action="{{route('register.step2.post')}}" method="post">
         @csrf
     <div class="register-form__contet">
         <label>現在の体重</label>
         <div class="input-form">
-            <input type="text" name="weight" placeholder="現在の体重を入力" value=""/>
+            <input type="text" name="weight" placeholder="現在の体重を入力" value="{{ old('weight') }}"/>
             <span class="weight-pound">kg</span>
         </div>
         <p class="register-form__error-message">
@@ -33,7 +34,7 @@
         </p>
         <label>目標の体重</label>
         <div class="input-form">
-            <input type="text" name="target_weight" placeholder="目標の体重を入力" value=""/>
+            <input type="text" name="target_weight" placeholder="目標の体重を入力" value="{{ old('target_weight') }}"/>
             <span class="weight-pound">kg</span>
         </div>
         <p class="register-form__error-message">

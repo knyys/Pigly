@@ -45,6 +45,7 @@
     display: flex;
     justify-content: center;
 }
+
 .btn__return {
     text-decoration: none;
     border: none;
@@ -67,4 +68,3 @@
     font-size: 16px;
     cursor: pointer;
 }
-

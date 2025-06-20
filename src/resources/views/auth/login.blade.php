@@ -17,15 +17,15 @@
         @csrf
     <div class="login-form__contet">
         <label>メールアドレス</label>
-        <input type="email" name="email" placeholder="メールアドレスを入力" value="{{old('email')}}"/>
-        <p class="register-form__error-message">
+        <input type="email" name="email" placeholder="メールアドレスを入力" value="{{ old('email') }}"/>
+        <p class="form__error">
             @error('email')
             {{ $message }}
             @enderror
         </p>
         <label>パスワード</label>
-        <input type="password" name="password" placeholder="パスワードを入力" value="{{old('password')}}"/>
-        <p class="register-form__error-message">
+        <input type="password" name="password" placeholder="パスワードを入力" value="{{ old('password') }}"/>
+        <p class="form__error">
             @error('password')
             {{ $message }}
             @enderror
