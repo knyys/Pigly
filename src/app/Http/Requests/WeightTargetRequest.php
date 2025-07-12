@@ -23,18 +23,10 @@ class WeightTargetRequest extends FormRequest
      */
     public function rules()
     {
-        $routeName = $this->route()->getName(); // 例: 'goal.setting'
-
-        if ($routeName === 'goal.setting') {
-            return [
-                'target_weight' => 'required|regex:/^\d{1,3}(\.\d)?$/',
-            ];
-        }elseif ($routeName === 'register.step2.post') {
-            return [
-                'target_weight' => 'required|regex:/^\d{1,3}(\.\d)?$/',
-                'weight' => 'required|numeric|regex:/^\d{1,3}(\.\d)?$/',
-            ];
-        }
+        return [
+            'target_weight' => 'required|regex:/^\d{1,3}(\.\d)?$/',
+        ];
+        
     }
     
         public function messages()
@@ -42,9 +34,6 @@ class WeightTargetRequest extends FormRequest
         return [
             'target_weight.required'  => '目標の体重を入力してください',
             'target_weight.regex' => '4桁までの数字で入力してください<br>小数点は1桁で入力してください',
-            'weight.required' => '体重を入力してください',
-            'weight.numeric' => '数字で入力してください',
-            'weight.regex' => '4桁までの数字で入力してください。小数点は1桁までです。',
         ];
     }
 }

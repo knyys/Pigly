@@ -25,15 +25,24 @@ class StoreWeightLogRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'date' => 'required',
-            'weight' => 'required|numeric|regex:/^\d{1,3}(\.\d)?$/',
-            'calories' => 'required|integer',
-            'exercise_time' => 'required|date_format:H:i:s',
-            'exercise_content' => 'nullable|string|max:120',
-        ];
-    }
+        $routeName = $this->route()->getName(); 
 
+        if ($routeName === 'register.step2.post') {
+            return [
+                'target_weight' => 'required|regex:/^\d{1,3}(\.\d)?$/',
+                'weight' => 'required|numeric|regex:/^\d{1,3}(\.\d)?$/',
+            ];
+        }else {
+            return [
+                'date' => 'required',
+                'weight' => 'required|numeric|regex:/^\d{1,3}(\.\d)?$/',
+                'calories' => 'required|integer',
+                'exercise_time' => 'required|date_format:H:i:s',
+                'exercise_content' => 'nullable|string|max:120',
+            ];
+        }
+        
+    }
     
         public function messages()
     {
@@ -47,6 +56,8 @@ class StoreWeightLogRequest extends FormRequest
             'exercise_time.required' => '運動時間を入力してください',
             'exercise_time.date_format' => '運動時間はHH:MM:SSの形式で入力してください',
             'exercise_content.max' => '120文字以内で入力してください',
+            'target_weight.required'  => '目標の体重を入力してください',
+            'target_weight.regex' => '4桁までの数字で入力してください<br>小数点は1桁で入力してください',
         ];
     }
 }
